@@ -10,4 +10,6 @@
 
 void prompt(void);
 
+char *read_line(void);
+
 #endif

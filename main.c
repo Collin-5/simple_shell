@@ -7,7 +7,19 @@
 
 int main(void)
 {
-	prompt();
-	return (0);
+	char *line;
+	int status;
+
+	status = 1;
+
+	while (status == 1)
+	{
+		prompt();
+
+		line = read_line();
+		(void)line; /* temporary to avoid unused variable error */
+	}
+
+	return (status);
 
 }

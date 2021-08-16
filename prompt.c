@@ -1,11 +1,10 @@
 #include "holberton.h"
 
 /**
- * prompt the user
  * prompt - print prompt
+ * Return: void
  */
 void prompt(void)
 {
-	
-	write(STDOUT_FILENO, "#cisfun$\n ", 10);
+	write(STDOUT_FILENO, "#cisfun$ ", 9);
 }
