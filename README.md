@@ -1,2 +1,2 @@
-#simple shell
-a simple shell alx project 
+#Simple Shell
+Alx simple shell project.
