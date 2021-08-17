@@ -5,11 +5,20 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-
+#include <sys/types.h>
+#include <sys/wait.h>
 
 
 void prompt(void);
 
 char *read_line(void);
 
+/* in strings.c */
+int _strlen(char *s);
+
+char *_strcat(char *dest, char *src);
+
+char **_strtotokens(char *str);
+
+int _execute(char **tokens, char *args);
 #endif
