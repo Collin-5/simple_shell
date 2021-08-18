@@ -41,6 +41,22 @@ char *_strcat(char *dest, char *src)
 	return (dest);
 }
 
+/**
+ * _check_white_space - checks for white space
+ * @s: Pointer to string to check
+ * Return: integer
+ */
+unsigned int _check_white_space(char *s)
+{
+	unsigned int i, count = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i]  == ' ' || s[i] == '\t' || s[i] == '\n')
+			count++;
+	}
+	return (count);
+}
 
 /**
  * _strtotokens - splits a string into words
@@ -51,7 +67,8 @@ char **_strtotokens(char *str)
 {
 	int i = 0;
 	const char delimeter[] = " \t\n";
-	char **tokens = malloc(sizeof(char *) * (_strlen(str)));
+	int space = _check_white_space(str);
+	char **tokens = malloc(sizeof(char *) * (space + 1));
 	char *token;
 
 	if (!tokens)
