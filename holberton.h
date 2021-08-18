@@ -26,11 +26,4 @@ char **_strtotokens(char *str);
 
 int _execute(char **tokens, char *args);
 
-
-char *_path(char *path_command, char *commands);
-int _stat(const char *phat, struct stat *buf);
-char **split_line(char *input, char *separator);
-char *_final_path(char *path, char *new_command);
-
-char *_concat(char *dest, char *src);
 #endif
