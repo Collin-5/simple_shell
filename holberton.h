@@ -13,26 +13,19 @@
 #include <dirent.h>
 #include <signal.h>
 
-int _putchar(char c)
-{
-		return (write(1, &c, 1));
-}
 
 extern char **environ;
 void _puts(char *str);
-
 void prompt(void);
-
 char *read_line(void);
-
-/* in strings.c */
 int _strlen(char *s);
-
 char *_strcat(char *dest, char *src);
-
 char **_strtotokens(char *str);
-
 int _execute(char **tokens, char *args);
 void _printenv(void);
-int _env(char **commands);
+int _putchar(char c);
+int _strcmp(char *s1, char *s2);
+int _executeBuiltIn(char **tokens);
+int _isBuiltIn(char *str);
+
 #endif

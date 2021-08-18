@@ -12,6 +12,13 @@ int _execute(char **tokens, char *args)
 	pid_t child_pid;
 	int status;
 
+	/* check if first token is a built in */
+	if (_isBuiltIn(*tokens) == 0)
+	{
+		status = _executeBuiltIn(tokens);
+		return (status);
+	}
+
 	child_pid = fork();
 	if (child_pid == -1)
 	{

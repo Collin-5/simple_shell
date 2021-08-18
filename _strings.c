@@ -99,8 +99,13 @@ char **_strtotokens(char *str)
 
 void _puts(char *str)
 {
-	while (*str != '\0')
-		_putchar(*str++);
+	unsigned long i = 0;
+
+	while (str[i] != '\0')
+	{
+		_putchar(str[i]);
+		i++;
+	}
 
 	_putchar('\n');
 }
