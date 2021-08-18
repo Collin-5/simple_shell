@@ -72,3 +72,34 @@ char **_strtotokens(char *str)
 
 	return (tokens);
 }
+
+/**
+ * _concat - concatenate two strings
+ * @dest: string to be appended to
+ * @src: string to append
+ * Return: resulting string
+ */
+char *_concat(char *dest, char *src)
+{
+	int i = 0, j = 0;
+	int len1 = _strlen(dest) + _strlen(src);
+	char *str_union = malloc(sizeof(char) * len1);
+
+	if (!str_union)
+		return (NULL);
+
+	while (dest[i] != '\0')
+	{
+		str_union[i] = dest[i];
+		i++;
+	}
+
+	while (src[j] != '\0')
+	{
+		str_union[i] = src[j];
+		i++;
+		j++;
+	}
+
+	return (str_union);
+}
