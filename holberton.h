@@ -27,5 +27,8 @@ int _putchar(char c);
 int _strcmp(char *s1, char *s2);
 int _executeBuiltIn(char **tokens);
 int _isBuiltIn(char *str);
+int c_atoi(char *s);
+void _kill(char *lineptr, char *tmp, char **tok);
+
 
 #endif
