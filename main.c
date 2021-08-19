@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
 
 	(void)argc;
 
+	signal(SIGINT, ctrlc);
 	status = 0;
 	while (status == 0)
 	{
