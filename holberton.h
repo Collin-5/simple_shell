@@ -30,5 +30,8 @@ int _isBuiltIn(char *str);
 int c_atoi(char *s);
 void _kill(char *lineptr, char *tmp, char **tok);
 void _exitSimpleShell(char **tokens, char *line);
+void ctrlc(int signum);
+int is_delim(char c, const char *delim);
+char *_strtok(char *src, const char *delim);
 
 #endif

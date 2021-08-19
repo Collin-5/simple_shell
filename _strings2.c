@@ -51,3 +51,4 @@ int c_atoi(char *s)
 	}
 	return (num);
 }
+
