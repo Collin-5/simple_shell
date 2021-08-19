@@ -28,7 +28,15 @@ int main(int argc, char *argv[])
 			free(line);
 			continue;
 		}
+
+		if (_strcmp(tokens[0], "exit") == 0)
+		{
+			_exitSimpleShell(tokens, line);
+		}
+		else
+		{
 		status =  _execute(tokens, argv[0]);
+		}
 
 		free(line);
 		free(tokens);
