@@ -33,5 +33,7 @@ void _exitSimpleShell(char **tokens, char *line);
 void ctrlc(int signum);
 int is_delim(char c, const char *delim);
 char *_strtok(char *src, const char *delim);
+char *_strcpy(char *dest, char *src);
+size_t get_line(char **str);
 
 #endif
