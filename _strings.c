@@ -77,12 +77,12 @@ char **_strtotokens(char *str)
 		exit(1);
 	}
 
-	token = strtok(str, delimeter);
+	token = _strtok(str, delimeter);
 
 	while (token != NULL)
 	{
 		tokens[i] = token;
-		token = strtok(NULL, delimeter);
+		token = _strtok(NULL, delimeter);
 		i++;
 	}
 	tokens[i] =  NULL;

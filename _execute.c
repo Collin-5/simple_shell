@@ -32,9 +32,11 @@ int _execute(char **tokens, char *args)
 		if (execve(tokens[0], tokens, NULL) == -1)
 		{
 			err1 = _strcat(*tokens, ": No such file or directory\n");
-			err2 = strcat(args, ":");
-			err3 = strcat(err2, err1);
+			err2 = _strcat(args, ":");
+			err3 = _strcat(err2, err1);
 			write(STDERR_FILENO, err3, _strlen(err3));
+			
+		/*	printf("%s:%s: No such file\n", args, *tokens);*/
 			free(tokens);
 			exit(EXIT_FAILURE);
 		}

@@ -73,7 +73,7 @@ void ctrlc(int signum)
  * @str: buffer
  * Return: number of characters read
  */
-size_t get_line(char **str)
+ssize_t get_line(char **str)
 {
 	ssize_t i = 0, size = 0, t = 0, t2 = 0, n = 0;
 	char buff[1024];

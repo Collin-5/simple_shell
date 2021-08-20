@@ -8,10 +8,15 @@
 char *read_line(void)
 {
 	char *line =  NULL;
-	size_t len = 0;
-	int chars = 0;
+	/*size_t len = 0;
+	int chars = 0;*/
+	ssize_t chars = 0;
 
-	chars = getline(&line, &len, stdin);
+	/* inbuilt getline */
+	/*chars = getline(&line, &len, stdin);*/
+
+	/* custom get line */
+	chars = get_line(&line);
 
 	if (chars == EOF)
 	{
