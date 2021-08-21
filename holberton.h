@@ -35,5 +35,9 @@ int is_delim(char c, const char *delim);
 char *_strtok(char *src, const char *delim);
 char *_strcpy(char *dest, char *src);
 ssize_t get_line(char **str);
+int handle_path(char **tokens);
+int if_file_exists(char *s);
+char *path_builder(char **tokens);
+int execute2(char **tokens, char *path, char *args);
 
 #endif

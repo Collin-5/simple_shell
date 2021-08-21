@@ -11,21 +11,27 @@ int _execute(char **tokens, char *args)
 	char *err1, *err2, *err3;
 	pid_t child_pid;
 	int status;
-
+	char *path;
 	/* check if first token is a built in */
 	if (_isBuiltIn(*tokens) == 0)
 	{
 		status = _executeBuiltIn(tokens);
 		return (status);
 	}
-
+	/* if path wasn't entered e.g ls, pwd, etc */
+	path = path_builder(tokens);
+	if (path != NULL)
+	{
+		status = execute2(tokens, path, args);
+		return (status);
+	}
+	/* if path was entered e.g /bin/ls */
 	child_pid = fork();
 	if (child_pid == -1)
 	{
 		perror("Error: ");
 		return (1);
 	}
-
 	if (child_pid == 0)
 	{
 
@@ -35,8 +41,6 @@ int _execute(char **tokens, char *args)
 			err2 = _strcat(args, ":");
 			err3 = _strcat(err2, err1);
 			write(STDERR_FILENO, err3, _strlen(err3));
-			
-		/*	printf("%s:%s: No such file\n", args, *tokens);*/
 			free(tokens);
 			exit(EXIT_FAILURE);
 		}
