@@ -56,6 +56,7 @@ total 68
 #cisfun$ exit 100
 (your_terminal)$
 ```
+More info on our blog [here](https://www.linkedin.com/pulse/how-shell-works-collins-otieno)
 
 ## Authors
 1. [Collins Otieno](https://github.com/collin-5)
