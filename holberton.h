@@ -39,5 +39,9 @@ int handle_path(char **tokens);
 int if_file_exists(char *s);
 char *path_builder(char **tokens);
 int execute2(char **tokens, char *path, char *args);
+char *var_build(char *var_name, char *var_value);
+int _setenv(char *var_name, char *var_value);
+int _unsetenv(char *var_name);
+char *_strdup(char *str);
 
 #endif
