@@ -23,6 +23,7 @@ char *path_builder(char **tokens)
 {
 	char path1[100] = "/bin/";
 	char path2[100] = "/usr/bin/";
+
 	char *finalPath1;
 	char *finalPath2;
 
@@ -71,6 +72,7 @@ int execute2(char **tokens, char *path, char *args)
 			free(tokens);
 			exit(EXIT_FAILURE);
 		}
+		return (EXIT_SUCCESS);
 	}
 	wait(&status);
 	return (EXIT_SUCCESS);

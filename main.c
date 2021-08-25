@@ -22,6 +22,12 @@ int main(int argc, char *argv[])
 		prompt();
 
 		line = read_line();
+		if (_strcmp(line, "\n") == 0)
+		{
+			tokens = NULL;
+			free(line);
+			continue;
+		}
 		tokens = _strtotokens(line);
 		if (tokens[0] == NULL)
 		{
@@ -38,11 +44,8 @@ int main(int argc, char *argv[])
 		{
 		status =  _execute(tokens, argv[0]);
 		}
-
 		free(line);
 		free(tokens);
 	}
-
 	return (status);
-
 }

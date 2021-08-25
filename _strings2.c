@@ -19,18 +19,19 @@ int _putchar(char c)
  * Second string
  * Return: 0 if they are equal, positive value
  */
+
 int _strcmp(char *s1, char *s2)
 {
 	int i = 0;
 
-	while (s1[i] == s2[i] && s1[i])
+	while (s1[i] != '\0' || s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 		i++;
-	if (s2[i])
-		return (s1[i] - s2[i]);
-	else
-		return (0);
+	}
+	return (0);
 }
-
 /**
  * c_atoi - custom atoi converts string to int
  * @s: string

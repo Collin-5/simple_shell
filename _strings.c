@@ -48,7 +48,7 @@ char *_strcat(char *dest, char *src)
  */
 unsigned int _check_white_space(char *s)
 {
-	unsigned int i, count = 0;
+	int i, count = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -73,16 +73,17 @@ char **_strtotokens(char *str)
 
 	if (!tokens)
 	{
+		free(tokens);
 		fprintf(stderr, "sh: allocation error\n");
 		exit(1);
 	}
 
-	token = _strtok(str, delimeter);
+	token = strtok(str, delimeter);
 
 	while (token != NULL)
 	{
 		tokens[i] = token;
-		token = _strtok(NULL, delimeter);
+		token = strtok(NULL, delimeter);
 		i++;
 	}
 	tokens[i] =  NULL;

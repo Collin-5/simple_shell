@@ -44,8 +44,9 @@ int _execute(char **tokens, char *args)
 			free(tokens);
 			exit(EXIT_FAILURE);
 		}
+		return (EXIT_SUCCESS);
 	}
 	wait(&status);
-	return (EXIT_SUCCESS);
+	return (0);
 }
 
